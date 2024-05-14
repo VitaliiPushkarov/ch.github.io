@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const menuLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const bsNavbar = bootstrap.Collapse.getInstance(navbarCollapse);
+
+        bsNavbar.hide(); // Закрыть навигационное меню
+
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
 const copy = document.querySelector(".logos-slide").cloneNode(true);
 document.querySelector(".logos").appendChild(copy);
 
