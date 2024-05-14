@@ -18,10 +18,10 @@ for (i = 0; i < coll.length; i++) {
   var swiper = new Swiper(".mySwiper", {
     loop: true,
     disableOnInteraction: true,
-/*     speed: 800,
+    speed: 800,
     autoplay:{
       delay: 5000,
-    }, */
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'fraction',
